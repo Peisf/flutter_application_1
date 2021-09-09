@@ -39,7 +39,7 @@ class _PageDemoState extends State<PageDemo> with TickerProviderStateMixin {
       appBar: AppBar(
         title: Text("AppBar"),
         centerTitle: true,
-        leading: IconButton(onPressed: () {}, icon: Icon(Icons.home)),
+        // leading: IconButton(onPressed: () {}, icon: Icon(Icons.home)),
         actions: [
           IconButton(onPressed: () {}, icon: Icon(Icons.add)),
           IconButton(onPressed: () {}, icon: Icon(Icons.add)),
@@ -53,6 +53,7 @@ class _PageDemoState extends State<PageDemo> with TickerProviderStateMixin {
               .toList(),
         ),
       ),
+      drawer: MyDrawer(),
       // body: Text(_index.toString()),
       // body: widgets[_index],
       body: TabBarView(
@@ -92,6 +93,30 @@ class IosView extends StatelessWidget {
   Widget build(BuildContext context) {
     return Center(
       child: Text("IosView333"),
+    );
+  }
+}
+
+
+class MyDrawer extends StatelessWidget {
+  const MyDrawer({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      child: MediaQuery.removePadding(
+          context: context,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: EdgeInsets.only(top: 40),
+                child: Text("data"),
+              )
+            ],
+          ),
+          removeTop: true,
+      ),
     );
   }
 }

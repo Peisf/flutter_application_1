@@ -1,5 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/widgets/demo_02.dart';
+import 'package:flutter_application_1/widgets/button_navigator.dart';
+import 'package:flutter_application_1/widgets/listview_demo.dart';
+import 'package:flutter_application_1/widgets/gridview_demo.dart';
+import 'package:flutter_application_1/widgets/alert_dialog_demo.dart';
+import 'package:flutter_application_1/widgets/table_demo.dart';
+import 'package:flutter_application_1/widgets/card-demo.dart';
+import 'package:flutter_application_1/widgets/demo_05.dart';
 
 void main() => runApp(MyApp());
 
@@ -13,7 +20,7 @@ class MyApp extends StatelessWidget {
       // onGenerateRoute: (s){
       //   print(s.name);
       // },
-      home: PageDemo()
+      home: Demo05()
     );
   }
 }
