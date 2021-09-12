@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_application_1/provider/countProvider.dart';
 import 'package:flutter_application_1/widgets/demo_02.dart';
+import 'package:flutter_application_1/widgets/dio_demo.dart';
+import 'package:flutter_application_1/widgets/navigator_demo.dart';
 import 'package:flutter_application_1/widgets/button_navigator.dart';
 import 'package:flutter_application_1/widgets/listview_demo.dart';
 import 'package:flutter_application_1/widgets/gridview_demo.dart';
@@ -7,21 +10,43 @@ import 'package:flutter_application_1/widgets/alert_dialog_demo.dart';
 import 'package:flutter_application_1/widgets/table_demo.dart';
 import 'package:flutter_application_1/widgets/card-demo.dart';
 import 'package:flutter_application_1/widgets/demo_05.dart';
+import 'package:flutter_application_1/widgets/provider_demo.dart';
+import 'package:provider/provider.dart';
 
-void main() => runApp(MyApp());
+void main() => runApp(MultiProvider(
+      providers: [
+        ChangeNotifierProvider(
+          create: (context) => CountProvider(),
+        ),
+      ],
+      child: MyApp(),
+    )
+
+        // MyApp()
+        );
 
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      // routes: {
-      //   "/": (context) => LoginPage(),
-      // },
-      // onGenerateRoute: (s){
-      //   print(s.name);
-      // },
-      home: Demo05()
-    );
+        routes: {
+          "/": (context) => LoginPage(),
+          "provider": (context) => ProviderDemo(),
+          "provider2": (context) => ProviderDemoTwo(),
+          "dio": (context) => DioDemo(),
+        },
+        initialRoute: "dio",
+        onGenerateRoute: (RouteSettings s){
+          switch(s.name){
+            case "provider":
+              return MaterialPageRoute(
+                  builder: (context) {
+                    return ProviderDemo();
+                  },settings: s);
+          }
+        },
+        // home: ProviderDemo()
+        );
   }
 }
 
@@ -48,7 +73,6 @@ class CountPage extends StatefulWidget {
 }
 
 class _CountPageState extends State<CountPage> {
-
   int count = 0;
 
   @override
@@ -56,13 +80,14 @@ class _CountPageState extends State<CountPage> {
     return Column(
       children: [
         Text("$count"),
-        ElevatedButton(onPressed: (){
-          setState(() {
-            count++;
-          });
-        }, child: Text('点击'))
+        ElevatedButton(
+            onPressed: () {
+              setState(() {
+                count++;
+              });
+            },
+            child: Text('点击'))
       ],
     );
   }
 }
-
