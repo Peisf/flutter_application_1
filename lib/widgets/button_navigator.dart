@@ -3,14 +3,14 @@ import 'package:flutter_application_1/widgets/demo_02.dart';
 import 'package:flutter_application_1/widgets/layout_demo.dart';
 
 class BottomNavigatorBarDemo extends StatefulWidget {
-  // const BottomNavigatorBarDemo({Key? key}) : super(key: key);
+  const BottomNavigatorBarDemo({Key? key}) : super(key: key);
 
-  List<Widget> widgets = [PageDemo(),LayoutDemo()];
   @override
   _BottomNavigatorBarDemoState createState() => _BottomNavigatorBarDemoState();
 }
 
 class _BottomNavigatorBarDemoState extends State<BottomNavigatorBarDemo> {
+  List<Widget> widgets = [PageDemo(),LayoutDemo()];
 
   int _index = 0;
   @override
@@ -50,7 +50,7 @@ class _BottomNavigatorBarDemoState extends State<BottomNavigatorBarDemo> {
         },
       ),
       body: Center(
-        child: widget.widgets[_index],
+        child: widgets[_index],
       ),
     );
   }

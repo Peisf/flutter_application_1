@@ -21,101 +21,101 @@ import 'package:flutter/material.dart';
 //   }
 // }
 
-// class ButtonDemo extends StatelessWidget {
-//   const ButtonDemo({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         ElevatedButton(onPressed: (){}, child: Text("漂浮按钮")),
-//         TextButton(onPressed: (){}, child: Text("扁平按钮")),
-//         TextButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text("data")),
-//         OutlinedButton(onPressed: (){}, child: Text("OutLinedButton")),
-//       ],
-//     );
-//   }
-// }
+class ButtonDemo extends StatelessWidget {
+  const ButtonDemo({Key? key}) : super(key: key);
 
-// class ImageIconDemo extends StatelessWidget {
-//   const ImageIconDemo({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Icon(Icons.add),
-//         // IconButton(onPressed: (){}, icon: Icon(Icons.home))
-//        ],
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ElevatedButton(onPressed: (){}, child: Text("漂浮按钮")),
+        TextButton(onPressed: (){}, child: Text("扁平按钮")),
+        TextButton.icon(onPressed: (){}, icon: Icon(Icons.add), label: Text("data")),
+        OutlinedButton(onPressed: (){}, child: Text("OutLinedButton")),
+      ],
+    );
+  }
+}
 
-// class CheckDemo extends StatefulWidget {
-//   const CheckDemo({Key? key}) : super(key: key);
-//
-//   @override
-//   _CheckDemoState createState() => _CheckDemoState();
-// }
-//
-// class _CheckDemoState extends State<CheckDemo> {
-//   bool _check = false;
-//   bool _switch = false;
-//   @override
-//   Widget build(BuildContext context) {
-//     return Column(
-//       children: [
-//         Checkbox(value: _check, onChanged: (v){
-//           setState(() {
-//             _check= v!;
-//           });
-//         }),
-//         Switch(value: _switch, onChanged: (v){
-//           setState(() {
-//             _switch= v;
-//           });
-//         })
-//       ],
-//     );
-//   }
-// }
+class ImageIconDemo extends StatelessWidget {
+  const ImageIconDemo({Key? key}) : super(key: key);
 
-// class ProgressDemo extends StatelessWidget {
-//   const ProgressDemo({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return Padding(
-//       padding: EdgeInsets.all(10),
-//       child: Column(
-//         children: [
-//           LinearProgressIndicator(
-//             value: .5,
-//             valueColor: AlwaysStoppedAnimation(Colors.yellow),
-//           ),
-//           SizedBox(height: 16,),
-//         ],
-//       ),
-//     );
-//   }
-// }
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Icon(Icons.add),
+        IconButton(onPressed: (){}, icon: Icon(Icons.home))
+       ],
+    );
+  }
+}
 
-// class ClickDemo extends StatelessWidget {
-//   const ClickDemo({Key? key}) : super(key: key);
-//
-//   @override
-//   Widget build(BuildContext context) {
-//     return GestureDetector(
-//       onTap: () {
-//         print("tag");
-//       },
-//       onDoubleTap: (){
-//         print("double tag");
-//       },
-//       child: Text("data"),
-//     );
-//   }
-// }
+class CheckDemo extends StatefulWidget {
+  const CheckDemo({Key? key}) : super(key: key);
+
+  @override
+  _CheckDemoState createState() => _CheckDemoState();
+}
+
+class _CheckDemoState extends State<CheckDemo> {
+  bool _check = false;
+  bool _switch = false;
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        Checkbox(value: _check, onChanged: (v){
+          setState(() {
+            _check= v!;
+          });
+        }),
+        Switch(value: _switch, onChanged: (v){
+          setState(() {
+            _switch= v;
+          });
+        })
+      ],
+    );
+  }
+}
+
+class ProgressDemo extends StatelessWidget {
+  const ProgressDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(10),
+      child: Column(
+        children: [
+          LinearProgressIndicator(
+            value: .5,
+            valueColor: AlwaysStoppedAnimation(Colors.yellow),
+          ),
+          SizedBox(height: 16,),
+        ],
+      ),
+    );
+  }
+}
+
+class ClickDemo extends StatelessWidget {
+  const ClickDemo({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return GestureDetector(
+      onTap: () {
+        print("tag");
+      },
+      onDoubleTap: (){
+        print("double tag");
+      },
+      child: Text("data"),
+    );
+  }
+}
 
 class InputDemo extends StatefulWidget {
   const InputDemo({Key? key}) : super(key: key);

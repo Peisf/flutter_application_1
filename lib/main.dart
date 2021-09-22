@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/provider/countProvider.dart';
+import 'package:flutter_application_1/widgets/demo_01.dart';
 import 'package:flutter_application_1/widgets/demo_02.dart';
 import 'package:flutter_application_1/widgets/dio_demo.dart';
 import 'package:flutter_application_1/widgets/navigator_demo.dart';
@@ -31,11 +32,20 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         routes: {
           "/": (context) => LoginPage(),
+          "demo1": (context) => InputDemo(),
+          "demo2": (context) => PageDemo(),
+          "demo5": (context) => Demo05(),
+          "bottomBar": (context) => BottomNavigatorBarDemo(),
+          "listview": (context) => ListViewDemo(),
+          "gridview": (context) => GridViewDemo(),
+          "alertdialog": (context) => AlertDialogDemo(),
+          "table": (context) => TableDemo(),
+          "card": (context) => CardDemo(),
           "provider": (context) => ProviderDemo(),
           "provider2": (context) => ProviderDemoTwo(),
           "dio": (context) => DioDemo(),
         },
-        initialRoute: "dio",
+        initialRoute: "bottomBar", //设置初始路由 显示页面
         onGenerateRoute: (RouteSettings s){
           switch(s.name){
             case "provider":
