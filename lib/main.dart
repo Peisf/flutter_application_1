@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
           "provider2": (context) => ProviderDemoTwo(),
           "dio": (context) => DioDemo(),
         },
-        initialRoute: "bottomBar", //设置初始路由 显示页面
+        initialRoute: "/", //设置初始路由 显示页面； 替换路由，显示不同案例
         onGenerateRoute: (RouteSettings s){
           switch(s.name){
             case "provider":
